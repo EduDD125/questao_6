@@ -15,10 +15,10 @@ quantModelosPorTipoRoupa = order.groupby('page 1 (main category)')['page 2 (clot
 df_quantModelosPorTipoRoupa = quantModelosPorTipoRoupa.reset_index()
 
 # Definir os nomes das colunas do DataFrame
-df_quantModelosPorTipoRoupa.columns = ['Tipo de Roupa', 'Quantidade de Modelos']
+df_quantModelosPorTipoRoupa.columns = ['tipo', 'quantidade']
 
 # Escrever o DataFrame em um arquivo JSON
 print(df_quantModelosPorTipoRoupa)
 
 caminho_arquivo_json = 'dados_questao_6.json'
-df_quantModelosPorTipoRoupa.to_json(caminho_arquivo_json, orient='records')
+df_quantModelosPorTipoRoupa.to_json(caminho_arquivo_json, orient='records', index=4)

@@ -22,7 +22,7 @@
 <script>
   
         function lerArquivoJSON() {
-          fetch('http://localhost:8080/dados_questao.json')
+          fetch('./dados_questao.json')
               .then(response => response.json())
               .then(data => {
                   console.log(data);
@@ -38,8 +38,9 @@
         }
 
         function plotarGrafico(data) {
-            const labels = data.map(item => item.label);
-            const valores = data.map(item => item.valor);
+            
+            const labels = data.map(item => item.tipo);
+            const valores = data.map(item => item.quantidade);
             console.log(valores);
 
 
